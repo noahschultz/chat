@@ -1,0 +1,306 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+/*#######################################################################################################*/
+/*##################################                                    #################################*/
+/*##################################             CSS RESET              #################################*/
+/*##################################                                    #################################*/
+/*#######################################################################################################*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*#######################################################################################################*/
+/*##################################                                    #################################*/
+/*##################################               LAYOUT               #################################*/
+/*##################################                                    #################################*/
+/*#######################################################################################################*/
+/* Generic pane rules */
+body { margin: 0 }
+.row, .col { overflow: hidden; position: absolute; }
+.row { left: 0; right: 0; }
+.col { top: 0; bottom: 0; }
+
+/* Specific pane rules */
+.topbar.row { height: 60px; top: 0; }
+.body.row { top: 60px; bottom: 75px; }
+.content.col { left: 0; right: 200px; }
+.userlist.col { width: 200px; right: 0; }
+.messagebox.row { height: 75px; bottom: 0; }
+
+@media (max-width: 800px) {
+	.content.col { right: 0; width: 100%;}
+	.userlist.col { display: none;}
+}
+@media (max-height: 600px) {
+	.body.row { bottom: 1.6em; }
+	.messagebox.row { height: 1.6em;}
+}
+@media (max-height: 300px) {
+	.topbar.row{display: none;}
+	.body.row { top: 0; height: 50%; }
+	.messagebox.row { height: 50%; }
+}
+
+
+
+/* Fix scrolling */
+.scroll-x { overflow-x: auto; }
+.scroll-y { overflow-y: auto; }
+.scroll-x, .scroll-y { -webkit-overflow-scrolling: touch; }
+
+
+.hidden {
+	display: none !important;
+}
+
+/*#######################################################################################################*/
+/*##################################                                    #################################*/
+/*##################################               HEADER               #################################*/
+/*##################################                                    #################################*/
+/*#######################################################################################################*/
+
+.topbar {
+	font-family: verdana, arial, helvetica, sans-serif;
+	img {
+		float: left;
+	}
+	h1 {
+		font-size: 28px;
+		margin-top: -10px;
+		margin-left: -17px;
+		float: left;
+		display: block;
+	}
+	.user_info {
+		float: right;
+		line-height: 30px;
+		margin-right: 109px;
+	}
+	padding: 15px 20px;
+	background: white;
+	color: #333;
+
+}
+.settings {	
+		.settings-handle {
+			&:hover {
+				color: #333;
+			}
+			/* Absolute position to fix nudging issue on expand */
+			position: absolute;
+			top: 0;
+			right: 0;
+			
+			color: #ddd;
+			font-size: 3em;
+			display: block;
+			text-align: right;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			cursor: pointer;
+		}
+		.settings-content {
+			li {
+				text-align: right;
+				padding: 9px 15px;
+				border-bottom: 1px solid #D3D3D3;
+			}
+			top: 40px;
+			right: -14px;
+			background: #FFF;
+			position: relative;
+		}
+
+		position: absolute;
+		right: 14px;
+		top: 19px;
+		z-index: 1;
+	}
+
+.pr {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
+	z-index: 1;
+}
+
+@media (max-width: 800px) {
+	.pr { display: none;}
+}
+
+/*#######################################################################################################*/
+/*##################################                                    #################################*/
+/*##################################               LOGIN                #################################*/
+/*##################################                                    #################################*/
+/*#######################################################################################################*/
+
+
+
+.login {
+	width: 80%;
+	max-width: 400px;
+	background: white;
+	border: 1px solid #ccc;
+	color: #333;
+	text-align: center;
+	border-radius: 4px;
+	padding: 20px;
+	margin: 100px auto;
+	h1 {
+		font-size: 24px;
+		margin-bottom: 20px;
+		line-height: 1.4em;
+
+	}
+	p {
+		margin-bottom: 20px;
+	}
+	.button {
+		/* HORRIFIC STYLES — trying to look like meetup */
+		-webkit-appearance: none;
+		-webkit-background-clip: border-box;
+		-webkit-background-origin: padding-box;
+		-webkit-background-size: auto;
+		-webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0px 0px inset;
+		-webkit-rtl-ordering: logical;
+		-webkit-transition-delay: 0s;
+		-webkit-transition-duration: 0s;
+		-webkit-transition-property: none;
+		-webkit-transition-timing-function: ease;
+		-webkit-user-select: none;
+		-webkit-writing-mode: horizontal-tb;
+		align-items: flex-start;
+		background-attachment: scroll;
+		background-clip: border-box;
+		background-color: rgba(0, 0, 0, 0);
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(224, 57, 62)), to(rgb(199, 31, 36)));
+		background: -webkit-linear-gradient(top, rgb(224, 57, 62), rgb(199, 31, 36)); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(top, rgb(224, 57, 62), rgb(199, 31, 36)); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(top, rgb(224, 57, 62), rgb(199, 31, 36)); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(top, rgb(224, 57, 62), rgb(199, 31, 36)); /* Standard syntax */
+		background-origin: padding-box;
+		background-size: auto;
+		border-bottom-color: rgba(0, 0, 0, 0.14902);
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+		border-image-outset: 0px;
+		border-image-repeat: stretch;
+		border-image-slice: 100%;
+		border-image-source: none;
+		border-image-width: 1;
+		border-left-color: rgba(0, 0, 0, 0.14902);
+		border-left-style: solid;
+		border-left-width: 1px;
+		border-right-color: rgba(0, 0, 0, 0.14902);
+		border-right-style: solid;
+		border-right-width: 1px;
+		border-top-color: rgba(0, 0, 0, 0.14902);
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		border-top-style: solid;
+		border-top-width: 1px;
+		box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0px 0px inset;
+		box-sizing: border-box;
+		color: rgb(255, 255, 255);
+		cursor: pointer;
+		display: inline-block;
+		font-family: helvetica, arial, sans-serif;
+		font-size: 16px;
+		font-weight: bold;
+		height: 32.390625px;
+		letter-spacing: normal;
+		line-height: 16px;
+		margin-bottom: 12px;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-top: 0px;
+		padding-bottom: 6.400000095367432px;
+		padding-left: 12px;
+		padding-right: 12px;
+		padding-top: 8px;
+		text-align: center;
+		text-decoration: none;
+		text-indent: 0px;
+		text-shadow: none;
+		text-transform: none;
+		transition-delay: 0s;
+		transition-duration: 0s;
+		transition-property: none;
+		transition-timing-function: ease;
+		vertical-align: middle;
+		white-space: nowrap;
+		word-spacing: 0px;
+		writing-mode: lr-tb;
+		zoom: 1;
+	}
+}

@@ -1,0 +1,77 @@
+// Place all the styles related to the loungechats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container_12 {
+	font-family: 'Andale Mono W02 Regular', Inconsolata, 'Menlo Sans', Consolas, monospace;
+	text-rendering: optimizeLegibility;
+}
+.userlist.col { 
+	border-left: 1px solid white;
+	padding: 5px 10px;
+}
+.messagebox.row {
+	border-top: 1px solid white;
+	textarea {
+		-webkit-appearance: none;
+		border: none;
+		background: none;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+
+		&::-webkit-input-placeholder {  /* chrome, safari et.c. */
+			color: rgba(255, 255, 255, 0.38);
+		}
+		&::-moz-placeholder { /* firefox 19+ */
+			color: rgba(255, 255, 255, 0.38);
+		}
+		&:-ms-input-placeholder {  /* ie */
+			color: rgba(255, 255, 255, 0.38);
+		}
+	}
+}
+
+.output {
+	white-space: pre-wrap;
+	line-height: 1.4em;
+}
+@media (max-width: 600px), (max-height: 600px) {
+	.output {
+		font-size: 11px;
+	}
+}
+@media (max-width: 400px), (max-height: 400px) {
+	.output {
+		font-size: 9px;
+	}
+}
+@media all and (max-width: 300px), (max-height: 300px) and (-webkit-min-device-pixel-ratio: 2),(min--moz-device-pixel-ratio: 2),(min-resolution: 2dppx) {
+	.output {
+		font-size: 0.8em;
+	}
+}
+
+
+.output_message {
+
+}
+.output_history {
+	color: rgba(255, 255, 255, 0.5);
+}
+.output_logout {
+	color: rgb(129,164,0);
+}
+.output_login {
+	color: rgb(240,78,148);
+}
+.output_highlight {
+	color: rgb(47,153,220);
+}
+.output_me {
+	font-style: italic;
+}
